@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile | CarPool</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --accent: #0b74de;
+      --bg1: #bde0fe;
+      --bg2: #eaf6ff;
+      --shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, var(--bg1), var(--bg2));
+      font-family: 'Inter', sans-serif;
+      color: #0f172a;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .navbar {
+      background: #f8fbff !important;
+      box-shadow: var(--shadow);
+      height: 64px;
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+    }
+
+    .navbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 1.2rem;
+      gap: 8px;
+      text-decoration: none;
+    }
+
+    .navbar-brand img {
+      width: 28px;
+      height: 28px;
+    }
+
+    .navbar-nav {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .navbar-nav .nav-link {
+      font-weight: 500;
+      color: #1e293b;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      color: var(--accent);
+    }
+
+    .btn-outline-danger {
+      font-size: 0.9rem;
+      border-width: 1.5px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin-top: 100px;
+      margin-bottom: 50px;
+    }
+
+    .card {
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      background: #fff;
+      padding: 24px;
+      margin-bottom: 24px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .ride-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+    }
+
+    .ride-card small {
+      color: #64748b;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #6b7280;
+    }
+
+    h3 {
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      text-align: center;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ✅ Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top fade-in">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="https://cdn-icons-png.flaticon.com/512/741/741407.png" alt="CarPool">
+        CarPool
+      </a>
+      <div class="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav" id="nav-links">
+          <li class="nav-item"><a class="nav-link active" href="profile.html">Profile</a></li>
+          <li class="nav-item"><a class="nav-link" href="offer.html">Offer Ride</a></li>
+          <li class="nav-item"><a class="nav-link" href="search.html">Search</a></li>
+          <li class="nav-item"><button class="btn btn-outline-danger ms-2" onclick="logout()">Logout</button></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ✅ Profile Content -->
+  <div class="container fade-in">
+    <div class="card text-center">
+      <h2>Profile</h2>
+      <p><strong>Name:</strong> <span id="profileName"></span></p>
+      <p><strong>Email:</strong> <span id="profileEmail"></span></p>
+    </div>
+
+    <!-- Offered Rides -->
+    <div class="card">
+      <h3>Your Offered Rides</h3>
+      <div id="myrides">
+        <p class="text-muted">Loading your rides...</p>
+      </div>
+    </div>
+
+    <!-- Booked Rides -->
+    <div class="card">
+      <h3>Your Booked Rides</h3>
+      <div id="mybookings">
+        <p class="text-muted">Loading your bookings...</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>© 2025 CarPool </footer>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', loadProfile);
+  </script>
+</body>
+</html>

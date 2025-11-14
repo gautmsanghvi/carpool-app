@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CarPool | Ride Smarter</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #bde0fe, #eaf6ff);
+      animation: fadeIn 1s ease-in;
+      font-family: 'Inter', sans-serif;
+      color: #0f172a;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero {
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    .hero h1 {
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero p {
+      color: #475569;
+      font-size: 1.1rem;
+    }
+
+    .btn-primary {
+      background: #0b74de;
+      border: none;
+    }
+
+    .btn-outline-primary {
+      border-color: #0b74de;
+      color: #0b74de;
+    }
+
+    .btn-outline-primary:hover {
+      background: #0b74de;
+      color: white;
+    }
+
+    footer {
+      margin-top: 100px;
+      text-align: center;
+      color: #6b7280;
+    }
+
+    .navbar {
+      background: #f8fbff !important;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .navbar-brand img {
+      width: 28px;
+      height: 28px;
+      margin-right: 8px;
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top fade-in">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-primary d-flex align-items-center" href="index.html">
+        <img src="https://cdn-icons-png.flaticon.com/512/741/741407.png" alt="car icon"> CarPool
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav" id="nav-links">
+          <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
+          <li class="nav-item"><a class="nav-link" href="offer.html">Offer Ride</a></li>
+          <li class="nav-item"><a class="nav-link" href="search.html">Search</a></li>
+          <li class="nav-item"><button class="btn btn-outline-danger ms-2" onclick="logout()">Logout</button></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ✅ Hero Section -->
+  <div class="container hero fade-in">
+    <img src="https://cdn-icons-png.flaticon.com/512/68/68557.png" width="120" height="120" class="mb-4" alt="car illustration">
+    <h1>Ride Smarter. Travel Together.</h1>
+    <p>Find trusted rides, save money, and share your journey effortlessly.</p>
+
+    <div class="mt-4">
+      <a href="search.html" class="btn btn-primary btn-lg me-3">Find a Ride</a>
+      <a href="offer.html" class="btn btn-outline-primary btn-lg">Offer a Ride</a>
+    </div>
+  </div>
+
+  <!-- ✅ Footer -->
+  <footer>
+    <p>© 2025 CarPool </p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
